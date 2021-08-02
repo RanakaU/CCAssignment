@@ -11,7 +11,6 @@ import javax.persistence.Table;
 @Table(name="Restaurant_Profile")
 public class RestaurantProfile {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -54,6 +53,9 @@ public class RestaurantProfile {
 
     }
 
+    public RestaurantProfile(String name) {
+        this.name = name;
+    }
 
     //constructor
     public RestaurantProfile(String name, String email, String address, String description, String cuisine, String type, String specialoffers, String number, String website ){
@@ -140,23 +142,13 @@ public class RestaurantProfile {
         this.type = type;
     }
 
-
-
-
-
-
-    public String getSpecialOffers(){
+    public String getSpecialoffers() {
         return specialoffers;
     }
 
-    public void setSpecialOffers(String specialoffers){
+    public void setSpecialoffers(String specialoffers) {
         this.specialoffers = specialoffers;
     }
-
-
-
-
-
 
     public String getNumber(){
         return number;

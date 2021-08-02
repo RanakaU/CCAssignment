@@ -109,3 +109,28 @@ function loadRMenu(){
         }
     })
 }
+
+function getProfile(){
+
+    let restaurant = new URL(document.location).searchParams.get("name");
+
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8085/api/get/" + restaurant,
+        success: function(data){
+            console.log(data);
+
+            document.getElementById("name").innerText = data.name;
+            document.getElementById("description").innerText = data.description;
+            document.getElementById("type").innerText = data.type;
+            document.getElementById("address").innerText = data.address;
+            document.getElementById("number").innerText = data.number;
+            document.getElementById("cuisine").innerText = data.cuisine;
+            document.getElementById("website").href = "http://" + data.website;
+
+        },
+        error: function(error){
+            console.log(error);
+        }
+    })
+}

@@ -15,6 +15,8 @@ var span = document.getElementsByClassName("close")[0];
 
 btn1.onclick = function(){
     modal.style.display = "block";
+
+    filter("japanese");
 }
 
 btn2.onclick = function(){
@@ -62,4 +64,11 @@ window.onclick = function(event){
     if(event.target == modal){
         modal.style.display = "none";
     }
+}
+
+function filter(cuisine){
+
+    document.getElementById("S_List").innerHtml = "";
+
+    // Add the function for the template.
 }

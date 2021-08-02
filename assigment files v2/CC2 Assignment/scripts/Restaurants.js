@@ -50,3 +50,26 @@ var modal1 = document.getElementById("myModal1");
 function openmodal(){
     modal1.display.style = "block";
 }
+
+function getRestaurants(){
+
+    console.log("works");
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8085/api/getAll",
+        success: function(restaurants){
+            for(restaurant of restaurants){
+
+                let template = '<li><a href="restaurant.html?name='+ restaurant.name +'">'+ restaurant.name +'</a></li>';
+                document.getElementById("R_List").innerHTML += template;
+            }
+        },
+        error: function(error){
+            console.log(error);
+        }
+    })
+}
+
+document.getElementById("btn").addEventListener("click", function(){
+    getRestaurants();
+})

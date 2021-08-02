@@ -7,7 +7,7 @@ body, html {
   .bgimg {
     background-position: center;
     background-size: cover;
-    background-image: url("..images/coverpic.webp");
+    background-image: url("../images/coverpic.webp");
     min-height: 75%;
   }
   

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
@@ -34,13 +36,28 @@ public class RestaurantProfileController {
         }
     }
 
-
-
-
-
     @GetMapping("/getRprofile/{email}")
     public RestaurantProfile getRestaurantProfile(@PathVariable(name = "email")String email){
         return restaurantProfileService.getRestaurantProfile(email);
     }
 
+    @GetMapping("/getAll")
+    public List<RestaurantProfile> getAll(){
+        return restaurantProfileService.getAll();
+    }
+
+    @GetMapping("/get/{name}")
+    public RestaurantProfile getRestaurant(@PathVariable String name){
+        return restaurantProfileService.getProfile(name);
+    }
+
+    @GetMapping("/get/cuisine/{cuisine}")
+    public List<RestaurantProfile> getRestaurantsByCuisine(@PathVariable String cuisine){
+        return restaurantProfileService.getAllByCuisine(cuisine);
+    }
+
+    @GetMapping("/get/type/{type}")
+    public List<RestaurantProfile> getRestaurantsByType(@PathVariable String type){
+        return restaurantProfileService.getAllByType(type);
+    }
 }
