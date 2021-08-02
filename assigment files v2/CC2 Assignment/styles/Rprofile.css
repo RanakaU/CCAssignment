@@ -1,0 +1,28 @@
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+    font-size: 40px;
+  }
+  
+  .bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("..images/coverpic.webp");
+    min-height: 75%;
+  }
+  
+  .menu {
+    display: none;
+  }
+
+#name{
+    font-size: 40px;
+    color: white;
+}
+
+.mainheading{
+    position: relative;
+    margin: 50%;
+    font-size: 100px;
+}
+

@@ -1,0 +1,15 @@
+/* Font & and Body Color */
+body {
+    margin: 0;
+    background-color:#ffffff;
+    color:black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+/* End of Font & Body Color */
+
+/*Responsive Image */
+.mainlogo {
+  width: 100%;
+  max-width: width auto;
+  height: auto;
+}
